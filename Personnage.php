@@ -52,6 +52,36 @@ Class Personnage{
          $this->mana = ($para);
         
     }
+
+    public function Afficher_Stats(){
+
+        echo "\n".$this->nane . "\n";
+        echo $this->HP . "\n";
+        echo $this->attack . "\n";
+        echo $this->defense . "\n";
+        echo $this->mana . "\n";
+        echo $this->items . "\n";
+    }
+    public function Add_item ($str){
+        $element = strtolower($str);
+        array_push($this->items,$element) ;
+    }
+
+
+    public function Remove_item($str){
+        $element = strtolower($str);
+        array_splice($this->items, array_search($element,$this->items));
+    }
+
+    public function Search_item($str){
+        if(array_key_exists($str,$this->items)){
+            echo ("oui");
+        }else{
+            echo("non");
+        }
+
+    }
+
 }
 
 ?>
